@@ -14,7 +14,7 @@ const AddStudent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${apiUrl}/api/students`, { name, rollNumber, class: studentClass, parentContact });
+      await axios.post('https://attendance-api-xi.vercel.app/api/students', { name, rollNumber, class: studentClass, parentContact });
       setName('');
       setRollNumber('');
       setStudentClass('');
