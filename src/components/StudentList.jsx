@@ -11,7 +11,7 @@ const StudentList = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get(`${apiUrl}/api/students`);
+        const res = await axios.get('https://attendance-api-xi.vercel.app/api/students');
         setStudents(res.data);
         console.log('Students fetched successfully:', res.data);
       } catch (err) {
