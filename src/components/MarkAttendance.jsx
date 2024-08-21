@@ -16,8 +16,8 @@ const MarkAttendance = () => {
       setLoading(true);
       try {
         const [studentsRes, attendanceRes] = await Promise.all([
-          axios.get(`${apiUrl}/api/students`),
-          axios.get(`${apiUrl}/api/attendance`)
+          axios.get('https://attendance-api-xi.vercel.app/api/students'),
+          axios.get('https://attendance-api-xi.vercel.app/api/attendance')
         ]);
         setStudents(studentsRes.data);
         setAttendance(attendanceRes.data);
