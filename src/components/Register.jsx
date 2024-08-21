@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from '../axios'; // Import the axios instance
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { toast } from 'react-toastify'; // Import toast
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Register = ({ setAuth }) => {
   const [name, setName] = useState('');
@@ -13,7 +14,8 @@ const Register = ({ setAuth }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://attendance-api-xi.vercel.app/api/auth/register', { name, email, password, role });
+
+      await axios.post(`${apiUrl}/api/auth/register`, { name, email, password, role });
       setAuth(true);
       toast.success('Registration successful! Redirecting to login...', {
         position: "top-right",
