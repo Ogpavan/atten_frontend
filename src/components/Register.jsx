@@ -26,10 +26,10 @@ const Register = ({ setAuth }) => {
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => {
+ 
         navigate('/login'); // Redirect to the login page
         
-      }, 3000);
+     
     } catch (err) {
       if (err.response && err.response.data) {
         toast.error(`Error: ${err.response.data.message || 'Registration failed'}`, {
