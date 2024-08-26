@@ -75,7 +75,7 @@ const AttendanceList = () => {
           className="border p-2 "
         />
       </div>
-      <div className="overflow-x-auto">
+      <div className="">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
@@ -94,7 +94,7 @@ const AttendanceList = () => {
             {filteredAttendance.length > 0 ? (
               filteredAttendance.map((record) => (
                 <tr key={record._id}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm poppins-medium text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm poppins-medium text-gray-900 text-wrap">
                     {record.student.name}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm  text-gray-500">

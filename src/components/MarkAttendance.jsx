@@ -89,7 +89,7 @@ const MarkAttendance = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <p className='text-gray-700 font-medium'>Students:</p>
-            <div className="scrollable-div" style={{ height: '200px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px' }}>
+            <div className="scrollable-div" style={{ height: '400px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px' }}>
               {students.map(student => (
                 <div
                   key={student._id}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <div className='flex flex-col justify-center items-center h-screen gap-y-3 '>
+    <div className='flex flex-col justify-center items-center h-[100vh] gap-y-3 '>
         <h1 className='text-3xl poppins-bold'>Welcome!</h1>
         <p className='text-sm poppins-normal mb-5'>Keep the attendance here</p>
         <Link to ="/login">

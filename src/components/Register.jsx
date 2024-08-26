@@ -14,11 +14,10 @@ const Register = ({ setAuth }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
+
       await axios.post(`${apiUrl}/api/auth/register`, { name, email, password, role });
-=======
-      await axios.post('https://attendance-api-xi.vercel.app/api/auth/register', { name, email, password, role });
->>>>>>> 9bce13afc24fc3ca1f4ecd51fc7145299d74b565
+
+
       setAuth(true);
       toast.success('Registration successful! Redirecting to login...', {
         position: "top-right",
