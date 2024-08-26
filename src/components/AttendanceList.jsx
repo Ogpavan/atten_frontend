@@ -14,7 +14,7 @@ const AttendanceList = () => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const res = await axios.get(`${apiUrl}/api/attendance`);
+        const res = await axios.get('https://attendance-api-xi.vercel.app/api/attendance');
         const data = res.data;
         // Debug log
         setAttendance(data);
