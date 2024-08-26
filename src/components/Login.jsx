@@ -8,10 +8,12 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const Login = ({ setAuth }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);  // Add a loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);  // Set loading to true when the form is submitted
     try {
       const res = await axios.post(`${apiUrl}/api/auth/login`, { email, password });
       localStorage.setItem('token', res.data.token);
@@ -24,6 +26,8 @@ const Login = ({ setAuth }) => {
       }, 1500);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed!');
+    } finally {
+      setLoading(false);  // Set loading to false after the request is complete
     }
   };
 
@@ -52,7 +56,13 @@ const Login = ({ setAuth }) => {
               required
             />
           </div>
-          <button className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-blue-700 text-white hover:bg-indigo-200 md:py-2 md:text-lg md:px-10' type="submit">Login</button>
+          <button
+            className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-blue-700 text-white hover:bg-indigo-200 md:py-2 md:text-lg md:px-10'
+            type="submit"
+            disabled={loading}  // Disable the button while loading
+          >
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
         </form>
       </div>
     </div>
